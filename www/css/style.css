@@ -1,0 +1,170 @@
+#loginImgDiv {
+    background-color: #222;
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+
+#logonDMImg {
+    height: 100%;
+}
+
+.loginInputs {
+    width: 60%;
+    background-color: #D6D6D6;
+    font-size: 2em;
+    margin: 10% 0 0 20%;
+    padding: 0 0 0 1%;
+    outline: 1px solid #222;
+    border: none;
+}
+
+.loginInputs:first-of-type {
+    margin-top: 15%;
+}
+
+#loginButtsDiv {
+    
+}
+
+.loginButts {
+    display: inline-block;
+    background-color: #2AABE2;
+    width: 25%;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 2%;
+    outline: 1px solid #222;
+    margin: 15% 0 0 10%;
+}
+
+.loginButts:first-of-type {
+    margin-left: 20%;
+}
+
+.sideMenuLayout {
+    width: 100%;
+    background-image: url(../img/footer_lodyas.png);
+    padding: 5% 5% 0 5%;
+    color: #fff;
+    min-height: 100%;
+}
+
+#SPImg {
+    width: 30%;
+    border-radius: 7px;
+}
+
+#SPNameDiv {
+    font-size: 2em;
+    color: #fff;
+    vertical-align: top;
+    padding-top: 2.5%;
+    line-height: 1.4em;
+}
+
+#expBarDiv {
+    width: 100%;
+    height: 25px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+#expBar {
+/*    width: 60%;*/
+    height: 100%;
+    background-color: #386A7F;
+}
+
+#SPMoreInfoDiv {
+    margin-top: 8%;
+    width: 100%;
+}
+
+.SPMI {
+    margin: 2%; 0 2% 0
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.cards {
+    margin: 4%;
+    border: 2px solid #222;
+    padding: 2%;
+    background-color: rgba(2, 2, 2, .80);
+    border-radius: 7px;
+    color: #fff;
+}
+
+.cardHeader {
+    position: relative;
+    width: 100%;
+    font-size: 2.5em;
+    line-height: 1.3em;
+    padding: 0 0 1% 5%;
+    border-bottom: 1px solid #fff;
+}
+
+.cardTrophyImg {
+    height: 40px;
+    position: absolute;
+    right: 5%;
+}
+
+.cardBadges {
+    margin-top: 4%;
+    font-size: 2em;
+    line-height: 1.3em;
+    vertical-align: top;
+    padding-left: 5%;
+}
+
+.cardBadgeImage {
+    width: 6%;
+    margin-right: 5%;
+}
+
+#ICstudent {
+    background-image: url('https://images.unsplash.com/photo-1441039995991-e5c1178e605a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=2319197c3ec49bd92815b55f90628635');
+    background-position: top;
+    background-size: cover;
+}
+
+#requestDiv {
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid #222;
+    margin: 50% 0 0 1.75%;
+    padding: 2%;
+    background-color: #fff;
+}
+
+.watchStudent {
+    color: gold;
+}
+
+.bar-stable {
+    padding: 0;
+}
+
+.studentList {
+    
+}
+
+.ASBRD {
+    font-size: 1.5em;
+    padding: 4% 0 0 2%;
+}
+
+.ASBRI {
+    width: 6%;
+    margin-right: 5%;
+}
+
+.badgeRequestedClass {
+    color: #2A9AC9;
+}
+

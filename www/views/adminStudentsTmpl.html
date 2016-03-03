@@ -1,0 +1,29 @@
+<ion-view>
+    <ion-header-bar class="bar-stable">
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="search" placeholder="Search" ng-model="searchInput">
+            </label>
+            <button class="button button-clear" ng-click="searchInput = ''">
+                Cancel
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <div class="item item-icon-left studentList" ng-repeat="student in students | orderBy: ['-watch', 'name.first'] | filter:searchInput:strict">
+                <i class="icon ion-person" ng-class="{watchStudent: student.watch === true}" on-hold="setToWatch(student)"></i>
+                <b menu-close ui-sref="Admin.student({id:student._id})">{{student.firstName}} {{student.lastName}}</b>
+                <span class="badge badge-assertive" ng-click="SURBF(student.name)">{{student.badgesRequested.length}}</span>
+                
+                <div class="ASBRD" ng-repeat="badge in student.badgesRequested" ng-show="SURB === student.name">
+                    <img class="ASBRI" ng-src="{{badge.badgeImage}}">
+                    {{badge.mileStone}}
+                </div>
+            </div>
+
+        </div>
+        {{students}}
+    </ion-content>
+</ion-view>
