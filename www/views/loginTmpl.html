@@ -3,11 +3,12 @@
         <div id="loginImgDiv" class="hide-on-keyboard-open">
             <img id="logonDMImg" src="./img/dmlogoshinygif.gif">
         </div>
-        <input class="loginInputs" placeholder="Username">
-        <input class="loginInputs" placeholder="Password">
+        <input class="loginInputs" placeholder="Username" ng-model="user.username">
+        <input class="loginInputs" placeholder="Password" ng-model="user.password">
         <br>
         <div id="loginButtsDiv">
-            <div class="loginButts" ui-sref="Student">Student</div><div class="loginButts" ui-sref="Admin.students">Admin</div>
+            <div class="loginButts" ng-click="login(user)">Login</div>
+<!--            <div class="loginButts" ui-sref="Student">Student</div><div class="loginButts" ui-sref="Admin.students">Admin</div>-->
         </div>
     </ion-content>
 </ion-view>

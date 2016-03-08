@@ -1,6 +1,10 @@
 <ion-view>
-    <ion-header-bar class="bar-stable">
-        <h1 class="title">{{student.firstName}} {{student.lastName}}</h1>
+    <ion-header-bar>
+        <div class="bar bar-header">
+            <button ui-sref="Admin.students" class="button icon icon-navigation ion-chevron-left button-dark button-clear menu-close"></button>
+            <h1 class="customtitle">{{student.firstName}} {{student.lastName}}</h1>
+            <button class="button icon icon-navigation ion-chevron-right button-dark button-clear clear"></button>
+        </div>
     </ion-header-bar>
     <ion-content id="ICstudent">
         <div class="cards" ng-repeat="card in student.cohort.cohortCurriculum.deck track by $index">

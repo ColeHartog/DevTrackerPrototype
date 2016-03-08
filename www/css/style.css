@@ -30,12 +30,12 @@
 .loginButts {
     display: inline-block;
     background-color: #2AABE2;
-    width: 25%;
+    width: 60%;
     text-align: center;
     font-size: 1.5em;
     padding: 2%;
     outline: 1px solid #222;
-    margin: 15% 0 0 10%;
+    margin: 10% 0 0 10%;
 }
 
 .loginButts:first-of-type {
@@ -168,3 +168,15 @@
     color: #2A9AC9;
 }
 
+.customtitle {
+    margin: 0;
+    text-align: center;
+    font-size: 2em;
+    height: 100%;
+    color: #222;
+    width: 100%;
+}
+
+.clear {
+    opacity: 0;
+}

@@ -15,14 +15,14 @@
                         <div id="expBar" ng-style="{width: expPer()+'%'}"></div>
                     </div>
                     <div id="SPMoreInfoDiv">
-                        more info
-                        <br> stuff
-                        <br> stuff
-                        <br> stuff
-                        <br> stuff
-                        <br>
+                        
+                        <br> Badges : {{User.badgesAwarded.length}}
+                        <br> 
+                        <br>Gold : 
+                        <br>Silver :
+                        <br>Bronze : 
 
-                        <br>
+                        <br><br>
                         <div ui-sref="Login">Login</div>
                         <div ui-sref="Student">Student</div>
                         <div ui-sref="Admin.students">Admin</div>
@@ -45,8 +45,8 @@
                             <img class="cardTrophyImg" ng-src="{{NBSGP(card)}}">
                         </div>
                         <div class="cardBadges" ng-repeat="badge in card.badges track by $index" ng-class="{badgeRequestedClass: User.badgesRequested.indexOf(badge._id) !== -1}">
-                            <img class="cardBadgeImage" ng-src="{{badge.badgeImage}}" on-hold="showPopup({{badge}})" ng-if="User.badgesAwarded.indexOf(badge._id) !== -1">
-                            <img class="cardBadgeImage" on-hold="showPopup({{badge}})" ng-if="User.badgesAwarded.indexOf(badge._id) === -1" src="img/footer_lodyas.png"> {{badge.mileStone}}
+                            <img class="cardBadgeImage" ng-src="{{badge.badgeImage}}" on-hold="showPopup({{badge}})" ng-if="indexOfBadge(badge._id) !== -1">
+                            <img class="cardBadgeImage" on-hold="showPopup({{badge}})" ng-if="indexOfBadge(badge._id) === -1" src="img/footer_lodyas.png"> {{badge.mileStone}}
                         </div>
                     </div>
 

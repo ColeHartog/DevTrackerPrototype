@@ -1,10 +1,15 @@
 angular.module('ionicGDM')
 .service('studentService', function($http){
     
+    var durl = 'http://192.168.0.95:4000/'
+    
     this.getStudentInfo = function(){
         return $http({
             method: "GET",
-            url: 'http://localhost:4000/api/getUserInfo'
+            url: durl + 'api/mobileGSI',
+            headers: {
+                token: localStorage.getItem('app_token'),
+            }
         }).then(function(response){
             return response.data
         })
@@ -13,7 +18,22 @@ angular.module('ionicGDM')
     this.badgeRequest = function(badge){
         return $http ({
             method: "PUT",
-            url: 'http://localhost:4000/api/users/badgerequest/' + badge,
+            url: durl + 'api/mobileBadgeRequest/' + badge,
+            headers: {
+                token: localStorage.getItem('app_token'),
+            }
+        }).then(function(response){
+            return response.data;
+        })
+    };
+    
+    this.badgeWithdraw = function(badge){
+        return $http ({
+            method: "PUT",
+            url: durl + 'api/mobileBadgeWithdraw/' + badge,
+            headers: {
+                token: localStorage.getItem('app_token'),
+            }
         }).then(function(response){
             return response.data;
         })

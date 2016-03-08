@@ -9,15 +9,9 @@ angular.module('ionicGDM')
         })
     };
     
-    $scope.totalPointsPossible = function(){
-        var total = 0;
-        $scope.cards.forEach(function(card){
-            card.badges.forEach(function(badge){
-                total += badge.pointValue[Object.keys(badge.pointValue)];
-            })
-        })
-        return total;
-    }
+    setInterval(function(){
+        $scope.updateStudentInfo();
+    }, 1000);
     
     $scope.expPer = function(){
         return $scope.User.totalPoints/$scope.totalPointsPossible() *100;
@@ -53,8 +47,10 @@ angular.module('ionicGDM')
         var tpa = 0;
         var tpp = 0;
         for(var i = 0; i < card.badges.length; i++){
-            if($scope.student.badgesAwarded.indexOf(card.badges[i]._id) !== -1){
-                tpa += card.badges[i].pointValue.points;
+            for(var j = 0; j < $scope.student.badgesAwarded.length; j++){
+                if($scope.student.badgesAwarded[j]._id === card.badges[i]._id){
+                    tpa += card.badges[i].pointValue.points;
+                }
             }
         }
         for(var j = 0; j < card.badges.length; j++){
@@ -62,19 +58,19 @@ angular.module('ionicGDM')
         }
         var perc = (tpa/tpp)*100;
         if(perc > 100){
-            return "./../../img/trophyplatinum.png"
+            return "../www/img/trophyplatinum.png"
         }
         if(perc >= card.trophyLevels.gold){
-            return "./../../img/trophygold.png"
+            return "../www/img/trophygold.png"
         }
         if(perc >= card.trophyLevels.silver){
-            return "./../../img/trophysilver.png"
+            return "../www/img/trophysilver.png"
         }
         if(perc >= card.trophyLevels.bronze){
-            return "./../../img/trophybronze.png"
+            return "../www/img/trophybronze.png"
         }
         else{
-            return "./../../img/notrophy.png"
+            return "../www/img/notrophy.png"
         }
         
     };

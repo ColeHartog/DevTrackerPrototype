@@ -13,7 +13,7 @@
     <ion-content>
         <div class="list">
             <div class="item item-icon-left studentList" ng-repeat="student in students | orderBy: ['-watch', 'name.first'] | filter:searchInput:strict">
-                <i class="icon ion-person" ng-class="{watchStudent: student.watch === true}" on-hold="setToWatch(student)"></i>
+                <i class="icon ion-person" ng-class="{watchStudent: watching(student._id)}" on-hold="setToWatch(student)"></i>
                 <b menu-close ui-sref="Admin.student({id:student._id})">{{student.firstName}} {{student.lastName}}</b>
                 <span class="badge badge-assertive" ng-click="SURBF(student.name)">{{student.badgesRequested.length}}</span>
                 
@@ -24,6 +24,6 @@
             </div>
 
         </div>
-        {{students}}
+<!--        {{students}}-->
     </ion-content>
 </ion-view>
