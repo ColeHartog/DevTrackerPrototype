@@ -18,9 +18,9 @@
                         
                         <br> Badges : {{User.badgesAwarded.length}}
                         <br> 
-                        <br>Gold : 
-                        <br>Silver :
-                        <br>Bronze : 
+                        <br>Gold : {{trophyCount().gold}}
+                        <br>Silver : {{trophyCount().silver}}
+                        <br>Bronze : {{trophyCount().bronze}}
 
                         <br><br>
                         <div ui-sref="Login">Login</div>
@@ -39,7 +39,7 @@
                     <h1 class="title">{{User.firstName}} {{User.lastName}}</h1>
                 </ion-header-bar>
                 <ion-content id="ICstudent">
-                    <div class="cards" ng-repeat="card in User.cohort.cohortCurriculum.deck track by $index">
+                    <div class="cards" ng-repeat="card in User.cohort.curriculum.deck track by $index">
                         <div class="cardHeader">
                             <strong>{{card.trophyTitle}}</strong>
                             <img class="cardTrophyImg" ng-src="{{NBSGP(card)}}">
@@ -49,7 +49,6 @@
                             <img class="cardBadgeImage" on-hold="showPopup({{badge}})" ng-if="indexOfBadge(badge._id) === -1" src="img/footer_lodyas.png"> {{badge.mileStone}}
                         </div>
                     </div>
-
                 </ion-content>
         </ion-side-menu-content>
 

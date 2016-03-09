@@ -7,7 +7,7 @@
         </div>
     </ion-header-bar>
     <ion-content id="ICstudent">
-        <div class="cards" ng-repeat="card in student.cohort.cohortCurriculum.deck track by $index">
+        <div class="cards" ng-repeat="card in student.cohort.curriculum.deck track by $index">
             <div class="cardHeader">
                 <strong>{{card.trophyTitle}}</strong>
                 <img class="cardTrophyImg" ng-src="{{NBSGP(card)}}">

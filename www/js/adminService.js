@@ -6,7 +6,7 @@ angular.module('ionicGDM')
     this.getStudentsByCohort = function(){
         return $http({
             method: "GET",
-            url: durl + 'api/mobileGSBC/56d4723d7f4d602c0fae9aaa'
+            url: durl + 'api/mobileGSBC/56df500d2b493bb01aa2d045'
         }).then(function(response){
             return response.data
         })
