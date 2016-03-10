@@ -5,6 +5,10 @@
     text-align: center;
 }
 
+* {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 #logonDMImg {
     height: 100%;
 }
@@ -21,6 +25,20 @@
 
 .loginInputs:first-of-type {
     margin-top: 15%;
+}
+
+input[type=password] {
+    width: 60%;
+    background-color: #D6D6D6;
+    font-size: 2em;
+    margin: 10% 0 0 20%;
+    padding: 0 0 0 1%;
+    outline: 1px solid #222;
+    border: none;
+}
+
+input[type=password]::-webkit-input-placeholder {
+    padding-top: 4%;
 }
 
 #loginButtsDiv {
@@ -48,10 +66,13 @@
     padding: 5% 5% 0 5%;
     color: #fff;
     min-height: 100%;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 1.3;
 }
 
-#SPImg {
-    width: 30%;
+.SPImg {
+    width: 100%;
     border-radius: 7px;
 }
 
@@ -96,6 +117,7 @@
     padding: 2%;
     background-color: rgba(2, 2, 2, .80);
     border-radius: 7px;
+    box-shadow: 10px 10px 10px black;
     color: #fff;
 }
 
@@ -128,7 +150,7 @@
 }
 
 #ICstudent {
-    background-image: url('https://images.unsplash.com/photo-1441039995991-e5c1178e605a?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1080&fit=max&s=2319197c3ec49bd92815b55f90628635');
+    background-image: url('../img/dmlogoshinygif.gif');
     background-position: top;
     background-size: cover;
 }

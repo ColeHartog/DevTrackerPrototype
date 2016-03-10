@@ -1,10 +1,9 @@
 angular.module('ionicGDM')
 .service('loginService', function($http){
     
-    var durl = 'http://192.168.0.95:4000/'
+    var durl = 'http://162.243.31.87:80/'
     
     this.login = function(data){
-        console.log('logging in');
         return $http({
             method: "POST",
             url: durl + "api/mobileLogin",

@@ -5,7 +5,8 @@
         <ion-side-menu side="left">
             <ion-content>
                 <div class="sideMenuLayout">
-                    <img id="SPImg" src="http://www.mcs.anl.gov/research/LANS/images/people/missing.png">
+                    <img ng-hide="User.userImage" class="SPImg" src="http://www.mcs.anl.gov/research/LANS/images/people/missing.png">
+                    <img ng-show="User.userImage" class="SPImg" ng-src="{{User.userImage}}">
                     <div id="SPNameDiv">
                         {{User.firstName}} {{User.lastName}}
                         <br> {{User.cohort.cohortName}}
@@ -16,16 +17,11 @@
                     </div>
                     <div id="SPMoreInfoDiv">
                         
-                        <br> Badges : {{User.badgesAwarded.length}}
-                        <br> 
+                        <br><strong>Badges : {{User.badgesAwarded.length}}
+                        <br>
                         <br>Gold : {{trophyCount().gold}}
                         <br>Silver : {{trophyCount().silver}}
-                        <br>Bronze : {{trophyCount().bronze}}
-
-                        <br><br>
-                        <div ui-sref="Login">Login</div>
-                        <div ui-sref="Student">Student</div>
-                        <div ui-sref="Admin.students">Admin</div>
+                        <br>Bronze : {{trophyCount().bronze}}</strong>
                     </div>
                 </div>
             </ion-content>
@@ -34,10 +30,12 @@
         <ion-side-menu-content>
             <ion-content>
 
+<!--
                 <ion-header-bar class="bar-stable">
                     </ion-nav-back-button>
                     <h1 class="title">{{User.firstName}} {{User.lastName}}</h1>
                 </ion-header-bar>
+-->
                 <ion-content id="ICstudent">
                     <div class="cards" ng-repeat="card in User.cohort.curriculum.deck track by $index">
                         <div class="cardHeader">

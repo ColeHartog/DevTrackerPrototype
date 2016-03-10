@@ -48,7 +48,7 @@ angular.module('ionicGDM')
         var tpp = 0;
         for(var i = 0; i < card.badges.length; i++){
             for(var j = 0; j < $scope.student.badgesAwarded.length; j++){
-                if($scope.student.badgesAwarded[j]._id === card.badges[i]._id){
+                if($scope.student.badgesAwarded[j] === card.badges[i]._id){
                     tpa += card.badges[i].pointValue.points;
                 }
             }

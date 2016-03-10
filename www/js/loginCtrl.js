@@ -7,7 +7,6 @@ angular.module('ionicGDM')
         loginService.login(data).then(function(response){
             if(response.Login === true){
                 localStorage.setItem('app_token', response.token);
-                console.log(response);
                 if(response.status === 'Student'){
                     $state.go('Student');
                 }

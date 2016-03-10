@@ -4,6 +4,7 @@ angular.module('ionicGDM')
     $scope.getUserInfo = function(){
         adminService.getUserInfo().then(function(response){
             $scope.User = response;
+            $scope.getStudents();
         })
     };
     
@@ -38,18 +39,19 @@ angular.module('ionicGDM')
     };
     
     $scope.getStudents = function(){
-        adminService.getStudentsByCohort().then(function(response){
+       if($scope.User){ adminService.getStudentsByCohort($scope.User.cohort._id).then(function(response){
             $scope.students = response;
         })
+        }
     };
     
     setInterval(function(){
         $scope.getStudents();
-    }, 1000);
+    }, 5000);
     
     $scope.watching = function(ID){
         if($scope.User){
-            for(var i = 0; $scope.User.watchList.length; i++){
+            for(var i = 0; i < $scope.User.watchList.length; i++){
                 if($scope.User.watchList[i] === ID){
                     return true
                 }

@@ -1,12 +1,12 @@
 angular.module('ionicGDM')
 .service('adminService', function($http){
     
-    var durl = 'http://192.168.0.95:4000/';
+    var durl = 'http://162.243.31.87:80/';
     
-    this.getStudentsByCohort = function(){
+    this.getStudentsByCohort = function(ID){
         return $http({
             method: "GET",
-            url: durl + 'api/mobileGSBC/56df500d2b493bb01aa2d045'
+            url: durl + 'api/mobileGSBC/' + ID,
         }).then(function(response){
             return response.data
         })

@@ -12,7 +12,7 @@
     </ion-header-bar>
     <ion-content>
         <div class="list">
-            <div class="item item-icon-left studentList" ng-repeat="student in students | orderBy: ['-watch', 'name.first'] | filter:searchInput:strict">
+            <div class="item item-icon-left studentList" ng-show="watching(student._id)" ng-repeat="student in students | orderBy: ['name.first'] | filter:searchInput:strict">
                 <i class="icon ion-person" ng-class="{watchStudent: watching(student._id)}" on-tap="setToWatch(student)"></i>
                 <b menu-close ui-sref="Admin.student({id:student._id})">{{student.firstName}} {{student.lastName}}</b>
                 <span class="badge badge-assertive" on-tap="SURBF(student.name)">{{student.badgesRequested.length}}</span>
@@ -23,6 +23,17 @@
                 </div>
             </div>
 
+            <div class="item item-icon-left studentList" ng-hide="watching(student._id)" ng-repeat="student in students | orderBy: ['name.first'] | filter:searchInput:strict">
+                <i class="icon ion-person" ng-class="{watchStudent: watching(student._id)}" on-tap="setToWatch(student)"></i>
+                <b menu-close ui-sref="Admin.student({id:student._id})">{{student.firstName}} {{student.lastName}}</b>
+                <span class="badge badge-assertive" on-tap="SURBF(student.name)">{{student.badgesRequested.length}}</span>
+                
+                <div class="ASBRD" ng-repeat="badge in student.badgesRequested" ng-show="SURB === student.name">
+                    <img class="ASBRI" ng-src="{{badge.badgeImage}}">
+                    {{badge.mileStone}}
+                </div>
+            </div>
+            
         </div>
 <!--        {{students}}-->
     </ion-content>
